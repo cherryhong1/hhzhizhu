@@ -1,6 +1,6 @@
 <template>
-  <ul class="row columnList">
-    <li v-for="item in columnList" :key="item.id" class="col-3 card mb-3 offset-1">
+  <ul class="row columnList mt-3 .d-flex">
+    <li v-for="item in columnList" :key="item.id" class="col-3 card mb-3">
       <img :src="item.avatar" :alt="item.title" class="card-img-top mx-auto mt-3 rounded-circle">
       <div class="card-body">
       <h3 class="card-title">{{item.title}}</h3>
