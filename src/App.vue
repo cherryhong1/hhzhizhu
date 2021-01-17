@@ -36,7 +36,7 @@ const testData: ColumnProps[] = [
   }
 ]
 const testUser: UserInfo = {
-  isLogin: false,
+  isLogin: true,
   name: 'lisha',
   id: 'lili'
 }

@@ -5,7 +5,11 @@
     </a>
     <ul v-if="user.isLogin">
         <li class="nav-item">
-          <button type="button" class="btn btn-primary">hello,{{user.name}}</button>
+          <dropdown :title="`你好，${user.name}`">
+            <dropdownItem>新建文章</dropdownItem>
+            <dropdownItem :isDisabled="true">编辑文章</dropdownItem>
+            <dropdownItem>删除文章</dropdownItem>
+          </dropdown>
         </li>
     </ul>
     <ul v-else>
@@ -21,6 +25,8 @@
 
 <script lang='ts'>
 import { defineComponent, PropType } from 'vue'
+import dropdown from './dropDown.vue'
+import DropdownItem from './dropdownItem.vue'
 export interface UserInfo {
   isLogin: boolean;
   id? : string;
@@ -28,6 +34,10 @@ export interface UserInfo {
 }
 export default defineComponent({
   name: 'Nav',
+  components: {
+    dropdown,
+    DropdownItem
+  },
   props: {
     user: {
       type: Object as PropType<UserInfo>,
